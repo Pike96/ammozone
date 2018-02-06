@@ -6,7 +6,7 @@
 <%@include file="../include/admin/adminNavigator.jsp"%>
 
 <script>
-    $(function(){
+    $(function(){ // Check empty for add
 
         $("#addForm").submit(function(){
             if(!checkEmpty("name","Name"))

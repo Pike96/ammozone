@@ -7,4 +7,6 @@ public interface CategoryService{
     List<Category> list(Page page);
 
     int total();
+
+    void add(Category category);
 }
