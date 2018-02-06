@@ -20,13 +20,13 @@ public class TestAmmozone {
                 Statement s = c.createStatement();
         )
         {
-            for (int i = 1; i <=3 ; i++) {
+            for (int i = 1; i <=7 ; i++) {
                 String sqlFormat = "insert into category values (null, 'Test Category %d')";
                 String sql = String.format(sqlFormat, i);
                 s.execute(sql);
             }
 
-            System.out.println("Successfully add 3 test categories");
+            System.out.println("Successfully add 7 test categories");
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block

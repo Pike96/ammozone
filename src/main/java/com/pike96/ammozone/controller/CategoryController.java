@@ -1,5 +1,6 @@
 package com.pike96.ammozone.controller;
 
+import com.pike96.ammozone.util.Page;
 import com.pike96.ammozone.pojo.Category;
 import com.pike96.ammozone.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,12 @@ public class CategoryController {
     CategoryService categoryService;
 
     @RequestMapping("admin_category_list")
-    public String list(Model model) {
-        List<Category> cs = categoryService.list();
+    public String list(Model model, Page page) {
+        List<Category> cs = categoryService.list(page);
+        int total = categoryService.total();
+        page.setTotal(total);
         model.addAttribute("cs", cs);
+        model.addAttribute("page", page);
         return "admin/listCategory";
     }
 }

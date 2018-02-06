@@ -1,4 +1,5 @@
 package com.pike96.ammozone.service.impl;
+import com.pike96.ammozone.util.Page;
 import com.pike96.ammozone.mapper.CategoryMapper;
 import com.pike96.ammozone.pojo.Category;
 import com.pike96.ammozone.service.CategoryService;
@@ -11,8 +12,13 @@ public class CategoryServiceImpl implements CategoryService {
     @Autowired
     CategoryMapper categoryMapper;
 
-    public List<Category> list() {
-        return categoryMapper.list();
-    };
+    @Override
+    public List<Category> list(Page page) {
+        return categoryMapper.list(page);
+    }
 
+    @Override
+    public int total() {
+        return categoryMapper.total();
+    };
 }

@@ -97,11 +97,14 @@ td{
 th{
 	font-size:14px;
 }
-tr{
-	background-color: #f6f6f6!important;
-}
 
 /* Amazon Style */
+th {
+	background-color: #e8e8e8!important;
+}
+.panel-body {
+	background-color: white;
+}
 .a-button-primary:hover {
 	border-color: #a88734 #9c7e31 #846a29;
 	background: linear-gradient(to bottom,#f2d299,#eab93b);

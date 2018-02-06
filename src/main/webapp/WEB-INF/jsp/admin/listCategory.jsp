@@ -59,10 +59,10 @@
     </div>
 
     <div class="pageDiv">
-        <%//@include file="../include/admin/adminPage.jsp" %>
+        <%@include file="../include/admin/adminPage.jsp" %>
     </div>
 
-    <div class="panel panel-warning addDiv">
+    <div class="panel panel-default addDiv">
         <div class="panel-heading">New Category</div>
         <div class="panel-body">
             <form method="post" id="addForm" action="admin_category_add" enctype="multipart/form-data">
@@ -77,9 +77,9 @@
                             <input id="categoryPic" accept="image/*" type="file" name="image" />
                         </td>
                     </tr>
-                    <br>
                     <tr class="submitTR">
                         <td colspan="2" align="center">
+                            <br>
                             <button type="submit" class="a-button a-button-primary">Submit</button>
                         </td>
                     </tr>
