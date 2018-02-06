@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="repo1:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="ammozone_ssm-1.0-SNAPSHOT.war">
+    <root id="archive" name="ammozone_ssm.war">
       <element id="artifact" artifact-name="repo1:war exploded" />
     </root>
   </artifact>
