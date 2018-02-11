@@ -16,6 +16,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 @Controller
 @RequestMapping("")
@@ -41,7 +43,7 @@ public class CategoryController {
         ImageIO.write(img, "jpg", file);
         return "redirect:/admin_category_list";
     }
-    @RequestMapping("admin_category_edit")
+    @RequestMapping("admin_category_edit") // Direct to edit page
     public String edit(int id,Model model) throws IOException {
         Category c= categoryService.get(id);
         model.addAttribute("c", c);
@@ -62,8 +64,9 @@ public class CategoryController {
     }
     @RequestMapping("admin_category_list")
     public String list(Model model, Page page) {
-        List<Category> cs = categoryService.list(page);
-        int total = categoryService.total();
+        PageHelper.offsetPage(page.getStart(),page.getCount());
+        List<Category> cs = categoryService.list();
+        int total = (int) new PageInfo<>(cs).getTotal();
         page.setTotal(total);
         model.addAttribute("cs", cs);
         model.addAttribute("page", page);

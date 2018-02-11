@@ -1,15 +1,21 @@
 package com.pike96.ammozone.mapper;
-import com.pike96.ammozone.util.Page;
+
 import com.pike96.ammozone.pojo.Category;
+import com.pike96.ammozone.pojo.CategoryExample;
 import java.util.List;
 
 public interface CategoryMapper {
-    List<Category> list(Page page);
+    int deleteByPrimaryKey(Integer id);
 
-    int total();
+    int insert(Category record);
 
-    void add(Category category);
-    void update(Category category);
-    Category get(int id);
-    void delete(int id);
+    int insertSelective(Category record);
+
+    List<Category> selectByExample(CategoryExample example);
+
+    Category selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(Category record);
+
+    int updateByPrimaryKey(Category record);
 }

@@ -8,27 +8,27 @@
     <context:annotation-config />
     <context:component-scan base-package="com.pike96.ammozone.service" />
 
-    <!-- 导入数据库配置文件 -->
+    <!-- Import Database configuration -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
-    <!-- 配置数据库连接池 -->
+    <!-- Configure Connection pool -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <!-- 基本属性 url、user、password -->
+        <!-- Basic properties: url、user、password -->
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
 
-        <!-- 配置初始化大小、最小、最大 -->
+        <!-- Initialization -->
         <property name="initialSize" value="1" />
         <property name="minIdle" value="1" />
         <property name="maxActive" value="20" />
 
-        <!-- 配置获取连接等待超时的时间 -->
+        <!-- Wait Timeout -->
         <property name="maxWait" value="60000" />
 
-        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <!-- Detect Interval -->
         <property name="timeBetweenEvictionRunsMillis" value="60000" />
 
-        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <!-- Connection living time -->
         <property name="minEvictableIdleTimeMillis" value="300000" />
 
         <property name="validationQuery" value="SELECT 1" />
@@ -36,18 +36,18 @@
         <property name="testOnBorrow" value="false" />
         <property name="testOnReturn" value="false" />
 
-        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <!-- Open PSCache，Assign PSCache size for every connection -->
         <property name="poolPreparedStatements" value="true" />
         <property name="maxPoolPreparedStatementPerConnectionSize"
                   value="20" />
     </bean>
 
-    <!--Mybatis的SessionFactory配置-->
+    <!-- Mybatis - SessionFactory -->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="typeAliasesPackage" value="com.pike96.ammozone.pojo" />
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
-        <!--分页插件，目前先注释，后面重构的时候才会使用
+        <!-- PageHelper -->
         <property name="plugins">
             <array>
                 <bean class="com.github.pagehelper.PageInterceptor">
@@ -58,10 +58,9 @@
                 </bean>
             </array>
         </property>
-        -->
     </bean>
 
-    <!--Mybatis的Mapper文件识别-->
+    <!--Mybatis Mapper file recognition-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.pike96.ammozone.mapper"/>
     </bean>
