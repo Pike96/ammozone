@@ -27,6 +27,14 @@ public class CategoryServiceImpl implements CategoryService {
         categoryMapper.add(category);
     }
     @Override
+    public void update(Category category) {
+        categoryMapper.update(category);
+    }
+    @Override
+    public Category get(int id) {
+        return categoryMapper.get(id);
+    }
+    @Override
     public void delete(int id) {
         categoryMapper.delete(id);
     }

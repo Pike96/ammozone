@@ -68,12 +68,12 @@
                 <table class="addTable">
                     <tr>
                         <td>Name</td>
-                        <td><input  id="name" name="name" type="text" class="form-control"></td>
+                        <td><input id="name" name="name" type="text" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Image</td>
                         <td>
-                            <input id="categoryPic" accept="image/*" type="file" name="image" />
+                            <input id="categoryPic" name="image" accept="image/*" type="file"/>
                         </td>
                     </tr>
                     <tr class="submitTR">

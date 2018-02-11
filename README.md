@@ -9,6 +9,6 @@ Not selling any ammo. Just for fun.
 
 ## Progress
 
-180210 - Backstage: Delete
+180210 - Backstage: Delete, Update
 
 180206 - Backstage: List/Add

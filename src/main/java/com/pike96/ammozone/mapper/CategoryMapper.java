@@ -9,5 +9,7 @@ public interface CategoryMapper {
     int total();
 
     void add(Category category);
+    void update(Category category);
+    Category get(int id);
     void delete(int id);
 }
