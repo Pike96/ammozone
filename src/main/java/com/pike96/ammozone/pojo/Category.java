@@ -1,9 +1,13 @@
 package com.pike96.ammozone.pojo;
 
-public class Category {
+import java.io.Serializable;
+
+public class Category implements Serializable {
     private Integer id;
 
     private String name;
+
+    private static final long serialVersionUID = 1L;
 
     public Integer getId() {
         return id;

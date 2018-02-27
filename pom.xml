@@ -25,6 +25,7 @@
     <commons-lang.version>2.6</commons-lang.version>
     <aopalliance.version>1.0</aopalliance.version>
     <mybatis-generator.version>1.3.5</mybatis-generator.version>
+    <plugin.version>1.0.0</plugin.version>
   </properties>
 
   <dependencies>
@@ -161,6 +162,24 @@
       <groupId>org.mybatis.generator</groupId>
       <artifactId>mybatis-generator-core</artifactId>
       <version>${mybatis-generator.version}</version>
+    </dependency>
+
+    <!--redis-->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>1.6.1.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.7.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.pike96.ammozone.util</groupId>
+      <artifactId>SerializablePlugin</artifactId>
+      <version>${plugin.version}</version>
     </dependency>
 
   </dependencies>
