@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryMapper.selectByPrimaryKey(id);
     }
     @Override
-    public List<Category> list() {
+    public List<Category> list(int start) {
         CategoryExample example = new CategoryExample();
         example.setOrderByClause("id desc");
         return categoryMapper.selectByExample(example);

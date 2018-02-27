@@ -9,6 +9,8 @@ Not selling any ammo. Just for fun.
 
 ## Progress
 
+180227 - Add Redis. Fix bug for allying with PageHelper.
+
 180211 - MyBatis Generator for Category (Reverse Engineering)
 
 180210 - Backstage: Delete, Update
